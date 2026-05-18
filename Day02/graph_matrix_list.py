@@ -5,10 +5,17 @@ class Graph:
 
     def __init__(self, numnodes:int):
         self._data = [[None] * numnodes for _ in range(numnodes)] 
+
+    def __len__(self):
+        return len(self._data)
         
     def add_edge(self, n1: int, n2: int, weight: float) -> None:
         # Complex: O(1)
         self._data[n1][n2] = weight
+
+    def del_edge(self, n1: int, n2: int) -> None:
+        # Complex: O(1)
+        self._data[n1][n2] = None
 
     def get_edge(self, n1: int, n2: int) -> float | None:
         # Complex: O(1)
